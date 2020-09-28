@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header title="我的喵喵"/>
-    hello home
+    <Login/>
     <TabBar/>
   </div>
 </template>
@@ -9,11 +9,13 @@
 <script>
 import Header from '@/components/header'
 import TabBar from '@/components/tabBar'
+import Login from '@/components/login'
 export default {
   name:'Home',
   components: {
     Header,
-    TabBar
+    TabBar,
+    Login
   }
 }
 </script>

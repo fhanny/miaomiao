@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-wrapper">
+  <div class="movie_wrapper">
     <ul>
       <li>
         <div class="pic_show">
@@ -106,9 +106,9 @@
 </script>
 
 <style lang="scss" scoped>
-.movie-wrapper{
+.movie_wrapper{
   flex: 1;
-  /* overflow: auto; */
+  overflow: auto;
   ul{
     margin: 0 12px;
     overflow: hidden;
@@ -162,12 +162,10 @@
         color: #fff;
         font-size: 12px;
         cursor: pointer;
+        border-radius: 5px;
       }
     }
-
-
   }
-  
 }
 
 </style>

@@ -3,22 +3,22 @@
     <Header title="喵喵电影"/>
     <div id="content">
       <div class="movie_menu">
-        <div class="city_name">
+        <router-link tag="div" to="/movie/city" class="city_name">
           <span>合肥</span>
-          <i class="iconfont"></i>
-        </div>
+          <i class="iconfont icon-xiala"></i>
+        </router-link>
         <div class="hot">
-          <div class="hot-item">正在热映</div>
-          <div class="hot-item">即将上映</div>
+          <router-link tag="div" to="/movie/nowPlaying" class="hot-item active">正在热映</router-link>
+          <router-link tag="div" to="/movie/comingSoon" class="hot-item">即将上映</router-link>
         </div>
-        <div class="search">
-          <i class="iconfont"></i>
-        </div>
+        <router-link tag="div" to="/movie/search" class="search">
+          <i class="iconfont icon-search"></i>
+        </router-link>
       </div>
-      <!-- <keep-alive>
+      <keep-alive>
         <router-view/>
-      </keep-alive> -->
-      <NowPlaying/>
+      </keep-alive>
+      <!-- <NowPlaying/> -->
     </div>
     <TabBar/>
   </div>
@@ -27,13 +27,12 @@
 <script>
 import Header from '@/components/header'
 import TabBar from '@/components/tabBar'
-import NowPlaying from '@/components/nowPlaying'
+
 export default {
   name: 'Movie',
   components: {
     Header,
     TabBar,
-    NowPlaying
   }
 
 }
@@ -57,11 +56,13 @@ export default {
       border-bottom: 1px solid #e6e6e6;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      background: #fff;
       .city_name{
         margin-left: 20px;
         height: 100%;
         line-height: 45px;
-        &.active{
+        &.router-link-active{
           color: #ef4238;
           border-bottom: 2px #ef4238 solid;
         }
@@ -77,6 +78,24 @@ export default {
           text-align: center;
           margin: 0 12px;
           font-weight: 700;
+          &.router-link-active{
+            color: #ef4238;
+            border-bottom: 2px solid #ef4238;
+          }
+        }
+
+      }
+      .search{
+        margin-right: 20px;
+        height: 100%;
+        line-height: 45px;
+        &.router-link-active{
+          color: #ef4238;
+          border-bottom: 2px solid #ef4238;
+        }
+        i{
+          font-size: 24px;
+          color: #ef4238;
         }
       }
     }

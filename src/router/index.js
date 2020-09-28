@@ -19,6 +19,10 @@ const routes = [
     component: () => import('../views/movie'),
     children:[
       {
+        path: '/movie',
+        redirect: '/movie/nowPlaying'
+      },
+      {
         path: 'city',
         component: () => import('../components/city')
       },
